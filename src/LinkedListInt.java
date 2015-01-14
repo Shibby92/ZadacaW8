@@ -1,12 +1,15 @@
 // Lista integera
 public class LinkedListInt {
+	// TODO CR: Even if 'private' is added by default write:
+	// private Node head;
 	Node head;
 	private int size;
 
 	public int getSize() {
 		return size;
 	}
-
+	
+	// TODO CR: Constructor should be first method after attribute declaration move it before getSize()
 	public LinkedListInt() {
 		this.head = null;
 		this.size = 0;
@@ -15,12 +18,22 @@ public class LinkedListInt {
 	/**
 	 * Izbacivanje duplikata iz liste
 	 */
+	// TODO CR: Harise, mislim da su mislili na mnozinu ovdje, a ne na jednog duplikata
+	// TODO CR: Method should be named, removeDuplicates() since it implies one or more duplicates removed
 	public void removeDuplicate() {
-
+		// TODO CR: Better names for variables
+		// current is good!
+		// test    is not good!
+		// currentNode, nextNode make more sense! counterCurrent, counterNext also good
 		Node current = head;
 		Node test = head.next;
 		int counter1 = 0;
 		int counter2 = 1;
+		
+		// TODO CR:
+		// while (test != null) does not make sense, maybe use if (test != null)
+
+		
 		while (current.next != null) {
 			while (test != null) {
 				if (current.value == test.value) {
@@ -219,21 +232,28 @@ public class LinkedListInt {
 	/**
 	 * Ispisuje vrijednost srednjeg clana liste
 	 */
-	public void getMiddleValue() {
+	// TODO CR: getMiddleValue() should return value and not just print it
+	// get prefix implies returning of value, 'print' prefix should print it
+	
+	// TODO CR: I've changed this for you since I needed to test it
+	public int getMiddleValue() {
+		// TODO CR: Better to write
+		// Node first, second = head;
+		
 		Node first = head;
 		Node second = head;
 		while (second.next != null) {
 
 			second = second.next;
 			if (second.next == null) {
-				System.out.println(first.value);
-				return;
+				return first.value;
 			}
 
 			second = second.next;
 			first = first.next;
 		}
-		System.out.println(first.value);
+		
+		return first.value;
 	}
 
 	class Node {

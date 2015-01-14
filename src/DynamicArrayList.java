@@ -1,4 +1,3 @@
-import java.util.Collection;
 
 /**
  * Klasa array lista za integere
@@ -12,7 +11,7 @@ public class DynamicArrayList<T> {
 	private final int DEFAULT_SIZE = 10;
 
 	public DynamicArrayList() {
-		this.array = (T[]) (new Object[DEFAULT_SIZE]);
+		this.array = (T[]) (new T[DEFAULT_SIZE]);
 		this.size = 0;
 	}
 
