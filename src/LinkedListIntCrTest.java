@@ -23,7 +23,7 @@ public class LinkedListIntCrTest {
 		}
 		
 		// TODO CR: Add check to see if there are any duplicates, by comparing each element in list
-		
+		test.removeDuplicates();
 		System.out.println("Test testRemoveDuplicates() ... OK");
 	}
 	
