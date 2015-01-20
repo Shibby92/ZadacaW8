@@ -17,8 +17,9 @@ public class LinkedListTest {
 //			 System.out.println("NEMA");
 		 
 		 // TODO CR: Avoid using 'one liner' for loops, it is recommended to use '{' even when using one liners
-		 for(int meh:list.toArray())
+		 for(int meh:list.toArray()){
 			 System.out.println(meh);
+		 }
 //		 list.removeDuplicate();
 //list.removeDuplicateArray(list.toArray());
 		 list.printList();
