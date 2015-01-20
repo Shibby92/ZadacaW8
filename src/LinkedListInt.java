@@ -2,31 +2,32 @@
 public class LinkedListInt {
 	// TODO CR: Even if 'private' is added by default write:
 	// private Node head;
-	Node head;
+	private Node head;
 	private int size;
+
+// TODO CR: Constructor should be first method after attribute declaration move it before getSize()
+	public LinkedListInt() {
+		this.head = null;
+		this.size = 0;
+	}
 
 	public int getSize() {
 		return size;
 	}
 	
-	// TODO CR: Constructor should be first method after attribute declaration move it before getSize()
-	public LinkedListInt() {
-		this.head = null;
-		this.size = 0;
-	}
 
 	/**
 	 * Izbacivanje duplikata iz liste
 	 */
 	// TODO CR: Harise, mislim da su mislili na mnozinu ovdje, a ne na jednog duplikata
 	// TODO CR: Method should be named, removeDuplicates() since it implies one or more duplicates removed
-	public void removeDuplicate() {
+	public void removeDuplicates() {
 		// TODO CR: Better names for variables
 		// current is good!
 		// test    is not good!
 		// currentNode, nextNode make more sense! counterCurrent, counterNext also good
 		Node current = head;
-		Node test = head.next;
+		Node next = head.next;
 		int counter1 = 0;
 		int counter2 = 1;
 		
@@ -35,13 +36,13 @@ public class LinkedListInt {
 
 		
 		while (current.next != null) {
-			while (test != null) {
-				if (current.value == test.value) {
+			if (next != null) {
+				if (current.value == next.value) {
 					removeAt(counter2);
 					removeAt(counter1);
 					return;
 				}
-				test = test.next;
+				next = next.next;
 				counter2++;
 			}
 
@@ -240,8 +241,7 @@ public class LinkedListInt {
 		// TODO CR: Better to write
 		// Node first, second = head;
 		
-		Node first = head;
-		Node second = head;
+		Node first,second= head;
 		while (second.next != null) {
 
 			second = second.next;
